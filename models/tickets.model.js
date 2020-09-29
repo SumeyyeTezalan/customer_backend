@@ -3,22 +3,29 @@
 const CONFIG = require('../config/config');
 
 module.exports = (sequelize, DataTypes) => {
-    var User = sequelize.define('User', {
+    var Ticket = sequelize.define('Ticket', {
         id: {
             primaryKey: true,
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4
         },
-        name: {
+        message: {
             type: DataTypes.STRING
         },
 
-        isEmployee: {
+        status: {
             type: DataTypes.BOOLEAN
         },
+        customerId: {
+            type: DataTypes.INTEGER
+        },
+        customerName: {
+            type: DataTypes.STRING
+        },
+
 
     });
 
 
-    return User;
+    return Ticket;
 };
